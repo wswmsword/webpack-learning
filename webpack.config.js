@@ -5,13 +5,13 @@ module.exports = {
   entry: {
     index: {
       import: "./src/index.js",
-      dependOn: "shared",
+      // dependOn: "shared",
     },
     another: {
       import: "./src/another-module.js",
-      dependOn: "shared",
+      // dependOn: "shared",
     },
-    shared: "lodash",
+    // shared: "lodash",
   },
   output: {
     filename: "[name].bundle.js",
@@ -19,5 +19,8 @@ module.exports = {
   },
   optimization: {
     runtimeChunk: "single", // [一个页面多个入口时共享一个实例](https://bundlers.tooling.report/code-splitting/multi-entry/)
-  }
+    splitChunks: {
+      chunks: "all",
+    },
+  },
 }
