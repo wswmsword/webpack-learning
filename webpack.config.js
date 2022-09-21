@@ -3,15 +3,7 @@ const path = require("path");
 module.exports = {
   mode: "development",
   entry: {
-    index: {
-      import: "./src/index.js",
-      // dependOn: "shared",
-    },
-    another: {
-      import: "./src/another-module.js",
-      // dependOn: "shared",
-    },
-    // shared: "lodash",
+    index: "./src/index.js",
   },
   output: {
     filename: "[name].bundle.js",
@@ -19,8 +11,5 @@ module.exports = {
   },
   optimization: {
     runtimeChunk: "single", // [一个页面多个入口时共享一个实例](https://bundlers.tooling.report/code-splitting/multi-entry/)
-    splitChunks: {
-      chunks: "all",
-    },
   },
 }
