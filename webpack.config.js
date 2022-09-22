@@ -18,5 +18,14 @@ module.exports = {
   },
   optimization: {
     runtimeChunk: "single", // [一个页面多个入口时共享一个实例](https://bundlers.tooling.report/code-splitting/multi-entry/)
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          test: /([\\/])node_modules\1/,
+          name: "vendors",
+          chunks: "all",
+        },
+      }
+    },
   },
 }
