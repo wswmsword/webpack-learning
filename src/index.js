@@ -2,6 +2,9 @@
 import { cube } from "./math.js";
 
 function component() {
+  if (process.env.NODE_ENV !== 'production') {
+    console.log('Looks like we are in development mode!');
+  }
   // const element = document.createElement('div');
   const element = document.createElement('pre');
   // element.innerHTML = _.join(['Hello', 'webpack', ' ']);
