@@ -1,11 +1,9 @@
-async function getComponent() {
+import React from "react";
+import { createRoot } from "react-dom/client";
 
-  const { default: _ } = await import("lodash");
-  const element = document.createElement("div");
-  element.innerHTML = _.join(["Hello", "webpack"], " ");
-  return element;
-}
+const container = document.getElementById("root");
+const root = createRoot(container);
 
-getComponent().then(component => {
-  document.body.appendChild(component);
-})
+root.render(
+  <h1>Hello World</h1>
+);
