@@ -38,7 +38,11 @@ module.exports = {
         generator: {
           filename: "static/[hash][ext][query]",
         }
-      }
+      },
+      {
+        test: /.ico/,
+        type: "asset/inline",
+      },
     ]
   }
 }
