@@ -43,6 +43,10 @@ module.exports = {
         test: /.ico/,
         type: "asset/inline",
       },
+      {
+        test: /.txt/,
+        type: "asset/source",
+      }
     ]
   }
 }
