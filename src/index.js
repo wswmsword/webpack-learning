@@ -1,3 +1,5 @@
+// require("babel-polyfill"); // [Do not use this option if source code contains ES module import(s)](https://github.com/webpack-contrib/imports-loader#wrapper)
+
 const { file, parse } = require('./globals.js');
 
 function component() {
@@ -6,7 +8,7 @@ function component() {
 
   // imports-loader
   console.log(this);
-  this.alert("Hmmm, this probably isn't a great idea...");
+  // this.alert("Hmmm, this probably isn't a great idea...");
 
   // exports-loader
   console.log(file)
