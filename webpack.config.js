@@ -17,4 +17,12 @@ module.exports = {
       _: "lodash",
     }),
   ],
+  module: {
+    rules: [
+      {
+        test: require.resolve("./src/index.js"),
+        use: "imports-loader?wrapper=window",
+      }
+    ]
+  }
 }
