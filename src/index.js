@@ -3,6 +3,8 @@ import printMe from "./print.js";
 import mainImage from "./images/edgerunners.png";
 import icoImage from "./images/favicon.ico";
 import exampleText from "./example.txt";
+import txt4b from "./example2.md";
+import txt5b from "./example3.md";
 
 function component() {
   const element = document.createElement('div');
@@ -24,6 +26,11 @@ function component() {
   txt.innerHTML = exampleText;
 
   element.appendChild(txt);
+
+  const txr2 = document.createElement("P");
+  txt.innerHTML = txt4b + " and " + txt5b;
+
+  element.appendChild(txr2);
 
   return element;
 }
