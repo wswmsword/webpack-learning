@@ -2,18 +2,24 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  mode: "development",
+  // mode: "development",
   entry: {
     index: "./src/index.js",
-    print: "./src/print.js",
+    // print: "./src/print.js",
   },
-  devtool: "inline-source-map",
+  devtool: false,
   devServer: {
     static: "./dist",
   },
+  module: {
+    rules: [{
+      test: /\.js$/i,
+      use: ["babel-loader"],
+    }]
+  },
   plugins: [
     new HtmlWebpackPlugin({
-      title: "Development",
+      title: "Modern JavaScript Environment",
     }),
   ],
   output: {
@@ -23,6 +29,6 @@ module.exports = {
     publicPath: "/",
   },
   optimization: {
-    runtimeChunk: "single",
+    // runtimeChunk: "single",
   },
 }
